@@ -43,7 +43,7 @@ public class VeiculoController {
     }
 
     @DeleteMapping("/{id}")
-    public void deleteVeiculo(@PathVariable  String id) {
+    public void deleteVeiculo(@PathVariable String id) {
         veiculoRepository.deleteById(id);
     }
 }
