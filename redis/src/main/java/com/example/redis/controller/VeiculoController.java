@@ -1,6 +1,6 @@
 package com.example.redis.controller;
 
-import com.example.redis.model.Veiculo;
+import com.example.redis.model.Veiculos;
 import com.example.redis.repository.VeiculoRepository;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,23 +18,23 @@ public class VeiculoController {
     }
 
     @PostMapping
-    public Veiculo criarVeiculo(@RequestBody Veiculo veiculo) {
+    public Veiculos criarVeiculo(@RequestBody Veiculos veiculo) {
         return veiculoRepository.save(veiculo);
     }
 
     @GetMapping("/{id}")
-    public Optional<Veiculo> getVeiculo(@PathVariable String id) {
+    public Optional<Veiculos> getVeiculo(@PathVariable String id) {
         return veiculoRepository.findById(id);
     }
 
     @GetMapping
-    public List<Veiculo> getAllVeiculos() {
-        return (List<Veiculo>) veiculoRepository.findAll();
+    public List<Veiculos> getAllVeiculos() {
+        return (List<Veiculos>) veiculoRepository.findAll();
     }
 
     @PutMapping("/{id}")
-    public Veiculo updateVeiculo(@PathVariable String id, @RequestBody Veiculo veiculoDetails) {
-        Veiculo veiculo = veiculoRepository.findById(id)
+    public Veiculos updateVeiculo(@PathVariable String id, @RequestBody Veiculos veiculoDetails) {
+        Veiculos veiculo = veiculoRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Veículo não encontrado"));
         veiculo.setMarca(veiculoDetails.getMarca());
         veiculo.setModelo(veiculoDetails.getModelo());

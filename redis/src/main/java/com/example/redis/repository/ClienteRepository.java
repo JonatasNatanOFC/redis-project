@@ -1,10 +1,10 @@
 package com.example.redis.repository;
 
-import com.example.redis.model.Cliente;
+import com.example.redis.model.Clientes;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface ClienteRepository extends CrudRepository<Cliente, String> {
+public interface ClienteRepository extends CrudRepository<Clientes, String> {
 
 }

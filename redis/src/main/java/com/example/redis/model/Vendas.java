@@ -5,11 +5,11 @@ import org.springframework.data.redis.core.RedisHash;
 
 import java.io.Serializable;
 
-@RedisHash("veiculos")
-public class Veiculo implements Serializable {
+@RedisHash("vendas")
+public class Vendas implements Serializable {
     @Id
     private String id;
-    private String marca;
+    private String carro;
     private String modelo;
     private int ano;
 
@@ -21,12 +21,12 @@ public class Veiculo implements Serializable {
         this.id = id;
     }
 
-    public String getMarca() {
-        return marca;
+    public String getCarro() {
+        return carro;
     }
 
-    public void setMarca(String marca) {
-        this.marca = marca;
+    public void setCarro(String carro) {
+        this.carro = carro;
     }
 
     public String getModelo() {
